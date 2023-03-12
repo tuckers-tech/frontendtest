@@ -3,6 +3,10 @@ import BoardSquare from '@/components/BoardSquare.vue'
 
 const rows = Array.from({ length: 8 }, (_, i) => i + 1).reverse()
 const columns = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+
+const onSquareSelect = (identifier: string) => {
+  console.log(identifier)
+}
 </script>
 
 <template>
@@ -13,6 +17,7 @@ const columns = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
           v-for="col of columns"
           :key="`${col}${row}`"
           :identifier="`${col}${row}`"
+          @selected="onSquareSelect"
         ></BoardSquare>
       </template>
     </div>

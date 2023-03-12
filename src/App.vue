@@ -36,7 +36,6 @@ main {
 .app__chessboard {
   background-color: var(--color-background);
   flex: 1;
-  padding: 12px;
 }
 
 .app__sidebar {
