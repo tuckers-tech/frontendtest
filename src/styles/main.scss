@@ -1,0 +1,11 @@
+@import "./_base.scss";
+
+#app {
+  // Todo(Tucker): This has some artifacts when running on different browsers.
+  //  Some define 100vh as innerWidth while others define as outerWidth.  For
+  //  brevity we'll keep this as 100vh but there are drawbacks.
+  height: 100vh;
+  width: 100%;
+
+  font-weight: normal;
+}

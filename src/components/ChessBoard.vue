@@ -5,3 +5,6 @@
 <template>
   <p>ChessBoard</p>
 </template>
+
+<style lang="scss" scoped>
+</style>
