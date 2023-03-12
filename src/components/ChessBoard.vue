@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { storeToRefs } from 'pinia'
-import { useActiveSquare } from '@/hooks/useActiveSquare'
+import { useActiveSquare, useSelectHistory } from '@/hooks'
 import BoardSquare from '@/components/BoardSquare.vue'
 
 const { activeSquare } = storeToRefs(useActiveSquare())
 const { setActiveSquare } = useActiveSquare()
+
+const { pushSelectHistory } = useSelectHistory()
 
 const identifiers = computed(() => {
   const rows = Array.from({ length: 8 }, (_, i) => i + 1).reverse()
@@ -24,6 +26,7 @@ const identifiers = computed(() => {
 
 const onSquareSelect = (identifier: string) => {
   setActiveSquare(identifier)
+  pushSelectHistory(identifier)
 }
 
 const isActive = (identifier: string) => activeSquare.value === identifier

@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
-export const useActiveSquare = defineStore('active-square', () => {
+export const useActiveSquare = defineStore('select-history', () => {
   const activeSquare = ref<string | undefined>(undefined)
 
   function setActiveSquare(newValue: string | undefined) {
