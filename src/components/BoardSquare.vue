@@ -5,6 +5,7 @@ import { computed } from 'vue'
 
 const props = defineProps<{
   identifier: string
+  active: boolean
 }>()
 
 const emit = defineEmits<{
@@ -35,7 +36,10 @@ const onSquareSelect = () => {
 <template>
   <button
     class="board-square"
-    :class="[isLightSquare ? 'bord-square--light' : 'board-square--dark']"
+    :class="[
+      isLightSquare ? 'bord-square--light' : 'board-square--dark',
+      active && 'board-square--active'
+    ]"
     @click="onSquareSelect"
   >
     <span class="board-square__identifier">{{ identifier }}</span>
@@ -56,6 +60,18 @@ const onSquareSelect = () => {
 
   &--dark {
     background-color: var(--color-border);
+  }
+
+  &:hover {
+    border-color: var(--color-border-hover);
+  }
+
+  &--active {
+    border-color: var(--vt-c-indigo);
+
+    &:hover {
+      border-color: var(--vt-c-indigo);
+    }
   }
 
   &__identifier {
