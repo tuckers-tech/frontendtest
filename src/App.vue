@@ -4,22 +4,29 @@ import Sidebar from './components/Sidebar.vue'
 </script>
 
 <template>
+  <header>
+    <h2>Chess.com Test</h2>
+  </header>
+
   <main>
-    <ChessBoard class="app__chessboard"/>
-    <Sidebar class="app__sidebar"/>
+    <ChessBoard class="app__chessboard" />
+    <Sidebar class="app__sidebar" />
   </main>
 </template>
 
 <style lang="scss" scoped>
-@import "@/styles/utils.scss";
+@import '@/styles/utils.scss';
+
+header {
+  padding: 24px 24px 0 24px;
+}
 
 main {
-  height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 24px;
-  gap: 24px;
+  padding: 12px;
+  gap: 12px;
+  flex: 1;
 
   @include respond('sm') {
     flex-direction: row;

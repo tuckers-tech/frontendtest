@@ -1,10 +1,13 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <p>Sidebar</p>
+  <div class="sidebar">
+    <p>Sidebar</p>
+  </div>
 </template>
 
 <style lang="scss" scoped>
+.sidebar {
+  border-radius: 4px;
+}
 </style>
